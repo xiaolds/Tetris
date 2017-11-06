@@ -74,17 +74,36 @@ class Element:
             b.move_up()
 
     def move_right(self):
+        """向右"""
         for b in self.__bricks:
             b.move_right()
+
+    def rotate(self):
+        # check TODO
+        self._do_rotate()
+
+    def _do_rotate(self):
+        pass
 
     def __iter__(self):
         return self.__bricks.__iter__()
 
 
+
 class Element1(Element):
 
     def __init__(self):
-        pass # TODO
+        super().__init__()
+        # 定义list
+        _list = [
+            Brick(Point(0, 0)),
+            Brick(Point(0, 1)),
+            Brick(Point(0, 2)),
+            Brick(Point(0, 3))
+        ]
+        self.bricks = _list
+
+
 
 
 # test
